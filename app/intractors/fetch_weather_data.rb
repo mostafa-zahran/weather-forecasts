@@ -7,14 +7,7 @@ class FetchWeatherData
   end
 
   def call
-    context.weather_data = Rails.configuration.open_weather_api.current(context.options) do |response|
-      response['main']['temp'] = KelvinToCelsius.call(kelvin: response['main']['temp']).celsius
-      response['main']['temp_min'] = KelvinToCelsius.call(kelvin: response['main']['temp_min']).celsius
-      response['main']['temp_max'] = KelvinToCelsius.call(kelvin: response['main']['temp_max']).celsius
-      response['name'] = 'Unknown' if response['name'].blank?
-      response['sys']['country'] ||= 'Unknown'
-      response
-    end
+    context.weather_data = Rails.configuration.open_weather_api.current(context.options)
   end
 
   private

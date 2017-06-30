@@ -1,14 +1,14 @@
-<div class="widget-right weather-right--type<%= info.sys.type%> widget-right--brown">
+<div class="widget-right weather-right--type<%= weather_info.sys_type%> widget-right--brown">
   <div class="widget-right__header widget-right__header--brown">
     <div class="widget-right__layout">
-      <h2 class="widget-right__title"><%= info.name%>, <%= info.sys.country%></h2>
-      <p class="widget-right__description"><%= weather['description']%></p>
+      <h2 class="widget-right__title"><%= weather_info.city_name%>, <%= weather_info.country_name%></h2>
+      <p class="widget-right__description"><%= weather_info.description%></p>
     </div>
-    <img src="http://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/<%= weather['icon']%>.png" width="128" height="128" alt="Weather in <%= info.name%>, <%= info.sys.country%>" class="weather-right__icon weather-right__icon--type<%= info.sys.type%>" data-pin-nopin="true">
+    <img src="http://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/<%= weather_info.icon%>.png" width="128" height="128" alt="Weather in <%= weather_info.city_name%>, <%= weather_info.country_name%>" class="weather-right__icon weather-right__icon--type<%= weather_info.sys_type%>" data-pin-nopin="true">
   </div>
   <div class="weather-right weather-right--brown">
     <div class="weather-right__layout">
-      <div class="weather-right__temperature"><%= info.main.temp%><span>°C</span></div>
+      <div class="weather-right__temperature"><%= weather_info.temperature%><span>°C</span></div>
       <div class="weather-right__weather">
         <div class="weather-right-card">
           <table class="weather-right__table">
@@ -18,27 +18,27 @@
             </tr>
             <tr class="weather-right__items">
               <td class="weather-right__item">Feels like</td>
-              <td class="weather-right__item weather-right__feels"><%= info.main.temp%><span>°C</span></td>
+              <td class="weather-right__item weather-right__feels"><%= weather_info.temperature%><span>°C</span></td>
             </tr>
             <tr class="weather-right__items">
               <td class="weather-right__item">Wind</td>
-              <td class="weather-right__item weather-right__wind-speed"><%= info.wind.speed%> m/s</td>
+              <td class="weather-right__item weather-right__wind-speed"><%= weather_info.wind_speed%> m/s</td>
             </tr>
             <tr class="weather-right-card__items">
               <td class="weather-right__item">Humidity</td>
-              <td class="weather-right__item weather-right__humidity"><%= info.main.humidity%>%</td>
+              <td class="weather-right__item weather-right__humidity"><%= weather_info.humidity%>%</td>
             </tr>
             <tr class="weather-right-card__items">
               <td class="weather-right__item">Pressure</td>
-              <td class="weather-right__item weather-right__pressure"><%= info.main.pressure%> hPa</td>
+              <td class="weather-right__item weather-right__pressure"><%= weather_info.pressure%> hPa</td>
             </tr>
             <tr class="weather-right-card__items">
               <td class="weather-right__item">lat</td>
-              <td class="weather-right__item weather-right__pressure"><%= info.coord.lat%></td>
+              <td class="weather-right__item weather-right__pressure"><%= weather_info.lat%></td>
             </tr>
             <tr class="weather-right-card__items">
               <td class="weather-right__item">lon</td>
-              <td class="weather-right__item weather-right__pressure"><%= info.coord.lon%></td>
+              <td class="weather-right__item weather-right__pressure"><%= weather_info.lon%></td>
             </tr>
             </tbody>
           </table>

@@ -17,7 +17,7 @@ class WeatherOfRandomCities
     (1..context.num_cities).map do |_index|
       lat = rand(-90.000000000...90.000000000)
       lon = rand(-180.000000000...180.000000000)
-      RecursiveOpenStruct.new(fetch_weather_data(lat, lon))
+      WeatherForecast.new(fetch_weather_data(lat, lon))
     end
   end
 

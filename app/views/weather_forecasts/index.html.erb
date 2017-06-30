@@ -9,6 +9,6 @@
 <%= render 'form' %>
 </br>
 <% @current_weathers.each do |weather_info| %>
-    <%= render partial: 'weather_wedgit', locals: {info: weather_info, weather: weather_info.weather.first} %>
+    <%= render partial: 'weather_wedgit', locals: {weather_info: weather_info} %>
     </br>
 <% end %>

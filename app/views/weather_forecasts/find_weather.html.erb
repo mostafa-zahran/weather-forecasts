@@ -1,4 +1,4 @@
-<h2>Weather in <%= @current_weather.name%>, <%= @current_weather.sys.country%></h2>
+<h2>Weather in <%= @current_weather.city_name%>, <%= @current_weather.country_name%></h2>
 <%= render 'form'%>
 </br>
-<%= render partial: 'weather_wedgit', locals: {info: @current_weather, weather: @current_weather.weather.first}%>
+<%= render partial: 'weather_wedgit', locals: {weather_info: @current_weather}%>

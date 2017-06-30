@@ -6,7 +6,7 @@ class FindWeatherByCity
   end
 
   def call
-    context.current_weather = RecursiveOpenStruct.new(fetch_weather_data)
+    context.current_weather = WeatherForecast.new(fetch_weather_data)
   end
 
   private
