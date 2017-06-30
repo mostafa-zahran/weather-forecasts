@@ -1,0 +1,4 @@
+<h2>Weather in <%= @current_weather.name%>, <%= @current_weather.sys.country%></h2>
+<%= render 'form'%>
+</br>
+<%= render partial: 'weather_wedgit', locals: {info: @current_weather, weather: @current_weather.weather.first}%>
