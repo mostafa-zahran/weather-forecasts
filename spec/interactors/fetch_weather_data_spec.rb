@@ -1,13 +1,13 @@
 require 'rails_helper'
 describe FetchWeatherData do
 
-  it 'should search for weath using city and country' do
+  it 'should search for weather using city and country' do
     @interactor = FetchWeatherData.call(city: 'London', country: 'GB')
     expect(@interactor).to be_a_success
     expect(@interactor.weather_data).to be_present
   end
 
-  it 'should search for weath using lat and lon' do
+  it 'should search for weather using lat and lon' do
     @interactor = FetchWeatherData.call(lat: -41.61, lon: -43.54)
     expect(@interactor).to be_a_success
     expect(@interactor.weather_data).to be_present
