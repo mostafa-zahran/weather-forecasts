@@ -1,0 +1,55 @@
+<div class="widget-right weather-right--type<%= info.sys.type%> widget-right--brown">
+  <div class="widget-right__header widget-right__header--brown">
+    <div class="widget-right__layout">
+      <h2 class="widget-right__title"><%= info.name%>, <%= info.sys.country%></h2>
+      <p class="widget-right__description"><%= weather['description']%></p>
+    </div>
+    <img src="http://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/<%= weather['icon']%>.png" width="128" height="128" alt="Weather in <%= info.name%>, <%= info.sys.country%>" class="weather-right__icon weather-right__icon--type<%= info.sys.type%>" data-pin-nopin="true">
+  </div>
+  <div class="weather-right weather-right--brown">
+    <div class="weather-right__layout">
+      <div class="weather-right__temperature"><%= info.main.temp%><span>°C</span></div>
+      <div class="weather-right__weather">
+        <div class="weather-right-card">
+          <table class="weather-right__table">
+            <tbody>
+            <tr class="weather-right__items">
+              <th colspan="2" class="weather-right__item">Details</th>
+            </tr>
+            <tr class="weather-right__items">
+              <td class="weather-right__item">Feels like</td>
+              <td class="weather-right__item weather-right__feels"><%= info.main.temp%><span>°C</span></td>
+            </tr>
+            <tr class="weather-right__items">
+              <td class="weather-right__item">Wind</td>
+              <td class="weather-right__item weather-right__wind-speed"><%= info.wind.speed%> m/s</td>
+            </tr>
+            <tr class="weather-right-card__items">
+              <td class="weather-right__item">Humidity</td>
+              <td class="weather-right__item weather-right__humidity"><%= info.main.humidity%>%</td>
+            </tr>
+            <tr class="weather-right-card__items">
+              <td class="weather-right__item">Pressure</td>
+              <td class="weather-right__item weather-right__pressure"><%= info.main.pressure%> hPa</td>
+            </tr>
+            <tr class="weather-right-card__items">
+              <td class="weather-right__item">lat</td>
+              <td class="weather-right__item weather-right__pressure"><%= info.coord.lat%></td>
+            </tr>
+            <tr class="weather-right-card__items">
+              <td class="weather-right__item">lon</td>
+              <td class="weather-right__item weather-right__pressure"><%= info.coord.lon%></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="widget-right__footer widget-right__footer--brown">
+    <div class="widget-right__layout">
+      <a href="http://openweathermap.org/" target="_blank" class="widget-right__link">OpenWeatherMap</a>
+      <div class="widget-right__date"><%= Time.now.strftime('%H:%M')%></div>
+    </div>
+  </div>
+</div>

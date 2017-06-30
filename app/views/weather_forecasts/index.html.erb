@@ -1,0 +1,14 @@
+<h2>Random Forecasts</h2>
+<% if flash[:error] %>
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <%= flash[:error] %>
+    </div>
+<% end %>
+
+<%= render 'form' %>
+</br>
+<% @current_weathers.each do |weather_info| %>
+    <%= render partial: 'weather_wedgit', locals: {info: weather_info, weather: weather_info.weather.first} %>
+    </br>
+<% end %>

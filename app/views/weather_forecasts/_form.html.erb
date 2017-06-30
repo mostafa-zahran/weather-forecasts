@@ -1,0 +1,5 @@
+<%= form_tag(find_weather_path, method: :get) do %>
+    <%= text_field_tag :city, params[:city], {placeholder: 'City Name'} %>
+    <%= text_field_tag :country, params[:country], {placeholder: 'Country Code'} %>
+    <%= submit_tag 'Search' %>
+<% end %>
