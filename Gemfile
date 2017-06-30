@@ -20,6 +20,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'simplecov'
+  gem 'simplecov-html'
 end
 group :development do
   gem 'web-console', '>= 3.3.0'
